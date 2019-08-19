@@ -3,19 +3,19 @@
  * 编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 ""。
  * ["flower","flow","flight"]
  */
-const longestCommonPrefix = (strArr = []) => {
-  let res = '';
-  if (!strArr.length) return res;
-  for (let i = 0; i < strArr[0].length; i++) {
-    for (let j = 1; j < strArr.length; j++) {
-      if (strArr[j][i] != strArr[0][i]) {
-        return res;
-      }
-    }
-    res += strArr[0][i];
-  }
-  return res;
-}
+// const longestCommonPrefix = (strArr = []) => {
+//   let res = '';
+//   if (!strArr.length) return res;
+//   for (let i = 0; i < strArr[0].length; i++) {
+//     for (let j = 1; j < strArr.length; j++) {
+//       if (strArr[j][i] != strArr[0][i]) {
+//         return res;
+//       }
+//     }
+//     res += strArr[0][i];
+//   }
+//   return res;
+// }
 
 // var longestCommonPrefix = function (strs, re = '') {
 //   if (!strs.length) return re;
@@ -31,4 +31,21 @@ const longestCommonPrefix = (strArr = []) => {
 // };
 
 // console.log(longestCommonPrefix(["flower","flow","flight"]));
+
+//练习场
+const longestCommonPrefix = (strArr) => {
+  let res = '';
+  if (!strArr.length) return res;
+  for (let i = 0; i < strArr[0].length; i++) {
+    for (let j = 1; j < strArr.length; j++) {
+      if (strArr[j][i] != strArr[0][i]) {
+        return res;
+      }
+    }
+    res += strArr[0][i];
+  }
+  return res;
+}
+
+
 export default longestCommonPrefix;

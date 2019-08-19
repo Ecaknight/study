@@ -17,9 +17,15 @@
 // }
 
 //还是利用split, reverse, join进行处理, 不过内容不一样
+// export default (str) => {
+//   return str.split(/\s/g).map(item => {
+//     return item.split('').reverse().join('');
+//   }).join(' ');
+// }
+
+//练习代码
 export default (str) => {
-  return str.split(/\s/g).map(item => {
+  return str.split(' ').map(item => {
     return item.split('').reverse().join('');
   }).join(' ');
 }
-

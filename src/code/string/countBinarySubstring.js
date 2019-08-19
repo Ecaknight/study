@@ -28,25 +28,39 @@
 //   return res.length;
 // };
 
-const countBinarySubstring = (s) => {
-  let prevRunLength = 0, //记录上一个字符出现的次数?
-    curRunLength = 1, //记录当前字符出现的次数?
-    res = 0; //因为只有01两种, 可以理解为, 当一方的长度大于或者等于另一方的时候, 就出现符合的字符串
-  for (let i = 1; i < s.length; i++) {
-    if (s.charCodeAt(i) == s.charCodeAt(i - 1)) {
-      curRunLength++;
+// const countBinarySubstring = (s) => {
+//   let prevRunLength = 0, //记录上一个字符出现的次数?
+//     curRunLength = 1, //记录当前字符出现的次数?
+//     res = 0; //因为只有01两种, 可以理解为, 当一方的长度大于或者等于另一方的时候, 就出现符合的字符串
+//   for (let i = 1; i < s.length; i++) {
+//     if (s.charCodeAt(i) == s.charCodeAt(i - 1)) {
+//       curRunLength++;
+//     } else {
+//       prevRunLength = curRunLength;
+//       curRunLength = 1;
+//     }
+//     if (prevRunLength >= curRunLength) res++;
+//   }
+//   return res;
+// };
+
+//练习场
+const countBinarySubstring = (str) => {
+  let prev = 0,
+      cur = 1,
+      res = 0;
+  for (let i = 1; i < str.length; i++) {
+    if (str.charCodeAt(i) == str.charCodeAt(i - 1)) {
+      cur++;
     } else {
-      prevRunLength = curRunLength;
-      curRunLength = 1;
+      prev = cur;
+      cur = 1;
     }
-    if (prevRunLength >= curRunLength) res++;
+    if (prev >= cur) {
+      res++;
+    }
   }
   return res;
 };
-
-//复习第一种
-// const countBinarySubstring = (str) => {
-
-// };
 
 export default countBinarySubstring;
